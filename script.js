@@ -19,14 +19,23 @@ function corFundo(event) {
  Arruda e Issac foi posivel desenvolver o trecho do codigo onde adiciona tarefas a lista.
  Referencias de sites no final do codigo. */
 
+function riscaTarefa(e) {
+  const evento = e.target;
+  if (evento.classList.contains('completed')) {
+    return evento.classList.remove('completed');
+  }
+  return evento.classList.add('completed');
+}
+
 function criaTarefa() {
   if (elementoUsuario.value === '') { // Verifica se há texto digitado pelo usuario
     alert('Adicione uma tarefa!'); // Caso não tenha texto, dispara o alerta
     elementoUsuario.focus(); // o Cursor para digitação aparece atomaticamente no input
   } else { // Se tiver texto digitado...
     const novaTarefa = document.createElement('li'); // Cria um novo elemento 'li'
-    listaTarefa.appendChild(novaTarefa).innerHTML = elementoUsuario.value; // Adiciona o novo elemento criado 'li' dentro da lista ordenada 'ol' e atribui o valor digitado pelo usuario para o novo elemento criado 'li' 
+    listaTarefa.appendChild(novaTarefa).innerHTML = elementoUsuario.value; // Adiciona o novo elemento criado 'li' dentro da lista ordenada 'ol' e atribui o valor digitado pelo usuario para o novo elemento criado 'li'
     novaTarefa.addEventListener('click', corFundo); // Adiciona o evento no elemento criado 'li'. Evento criado na função acima.
+    novaTarefa.addEventListener('dblclick', riscaTarefa);
     elementoUsuario.value = ''; // Após a criação do elemento 'li', o input retorna no seu estado inicial.
     elementoUsuario.focus(); // Cursor para digitação aparece automaticamente no input
   }
