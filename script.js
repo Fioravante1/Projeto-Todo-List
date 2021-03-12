@@ -3,7 +3,6 @@ const botãoCriar = document.getElementById('criar-tarefa');
 const elementoUsuario = document.getElementById('texto-tarefa');
 
 /* Função criada com a ajuda de um amigo e mentor chamado João Victor. */
-
 function corFundo(event) {
   const elementoClicado = event.target; // Origem do evento.
   if (elementoClicado.classList.contains('corFundo')) { // Verifica se o elemento clicado tem a classe'corFundo'
@@ -15,9 +14,6 @@ function corFundo(event) {
   }
   return elementoClicado.classList.add('corFundo'); // Caso a origen do evento "elementoClicado"(click do mouse), não tenha a classe "corFundo", ela é adicionada.
 }
-/* Função criada com ajuda dos colegas dos Plantoes. Com a ajuda do racionio de Camila
- Arruda e Issac foi posivel desenvolver o trecho do codigo onde adiciona tarefas a lista.
- Referencias de sites no final do codigo. */
 
 function riscaTarefa(e) {
   const evento = e.target;
@@ -27,6 +23,9 @@ function riscaTarefa(e) {
   return evento.classList.add('completed');
 }
 
+/* Função criada com ajuda dos colegas dos Plantoes. Com a ajuda do racionio de Camila
+ Arruda e Issac foi posivel desenvolver o trecho do codigo onde adiciona tarefas a lista.
+ Referencias de sites no final do codigo. */
 function criaTarefa() {
   if (elementoUsuario.value === '') { // Verifica se há texto digitado pelo usuario
     alert('Adicione uma tarefa!'); // Caso não tenha texto, dispara o alerta
